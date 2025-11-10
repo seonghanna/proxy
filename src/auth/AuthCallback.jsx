@@ -1,7 +1,7 @@
 // /front/src/pages/AuthCallback.jsx
 import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { supabase } from "../../common/supabaseClient"; // ← 경로 확인!
+import { supabase } from "../common/supabaseClient"; // ← 경로 확인!
 
 export default function AuthCallback() {
   const navigate = useNavigate();
