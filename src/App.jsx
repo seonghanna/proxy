@@ -9,6 +9,7 @@ import BottomNav from "./common/BottomNav";
 import { pageVariants, pageTransition } from "./animations/pageTransition";
 import AdminLayout from "./admin/AdminLayout";
 import EventProducts from "./home/home_products/EventProducts"; 
+import AuthCallback from "./auth/AuthCallback";
 
 
 function AnimatedRoutes() {
@@ -34,6 +35,7 @@ function AnimatedRoutes() {
         <Route path="/mypage" element={withAnimation(MyPageMain)} />
         <Route path="/message" element={withAnimation(MessageMain)} />
         <Route path="/admin/*" element={<AdminLayout />} />
+        <Route path="/auth/callback" element={<AuthCallback />} />
         <Route path="/e/:eventId" element={<EventProducts />} />
       </Routes>
     </AnimatePresence>

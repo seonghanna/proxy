@@ -10,9 +10,13 @@ const ACCEPTED_STATES = new Set(["수락", "accepted", "수락완료"]);
 async function requireGoogleLogin() {
   const { data } = await supabase.auth.getUser();
   if (data?.user) return data.user;
+
   await supabase.auth.signInWithOAuth({
     provider: "google",
-    options: { redirectTo: window.location.href },
+    options: {
+      flow: "pkce",
+      redirectTo: window.location.origin + "/auth/callback",
+    },
   });
   return null;
 }
