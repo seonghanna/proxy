@@ -1,35 +1,23 @@
-// /front/src/pages/AuthCallback.jsx
+// /front/src/auth/AuthCallback.jsx  (혹은 경로 유지)
 import { useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
-import { supabase } from "../common/supabaseClient"; // ← 경로 확인!
+import { useNavigate } from "react-router-dom";
+import { supabase } from "../common/supabaseClient";
 
 export default function AuthCallback() {
   const navigate = useNavigate();
-  const { search } = useLocation();
 
   useEffect(() => {
     (async () => {
-      // code 파라미터 없는 접속은 홈으로
-      const code = new URLSearchParams(search).get("code");
-      if (!code) {
-        navigate("/", { replace: true });
-        return;
-      }
-
-      // Supabase가 URL의 code(+verifier)를 세션으로 교환
       const { error } = await supabase.auth.exchangeCodeForSession(window.location.href);
       if (error) {
-        console.error("exchange error:", error);
+        console.error("exchange error:", error.message);
         alert("로그인 처리에 실패했어요.");
         navigate("/", { replace: true });
         return;
       }
-
-      // URL 정리 후 원하는 곳으로 이동
-      window.history.replaceState({}, "", "/mypage");
       navigate("/mypage", { replace: true });
     })();
-  }, [search, navigate]);
+  }, [navigate]);
 
   return <div style={{ padding: 16 }}>로그인 처리 중…</div>;
 }

@@ -1,20 +1,17 @@
+// /front/src/common/supabaseClient.js
 import { createClient } from "@supabase/supabase-js";
 
-// 환경변수
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-// ✅ PKCE 전용 Supabase 클라이언트 생성
 export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
   auth: {
-    // 🔹 PKCE 방식으로 구글 로그인 처리 (해시 안 씀)
+    // PKCE 플로우 명시적으로 사용
     flowType: "pkce",
-
-    // 🔹 토큰 자동 새로고침 + 브라우저에 세션 유지
-    autoRefreshToken: true,
+    // 세션 유지/자동 갱신 켜기
     persistSession: true,
-
-    // 🔹 URL에 code가 있으면 자동으로 세션 교환 시도
-    detectSessionInUrl: true,
+    autoRefreshToken: true,
+    // 우리가 /auth/callback에서 직접 교환하므로 자동 감지 비활성화
+    detectSessionInUrl: false,
   },
 });

@@ -12,12 +12,15 @@ async function requireGoogleLogin() {
   if (data?.user) return data.user;
 
   await supabase.auth.signInWithOAuth({
-    provider: "google",
-    options: {
-      flow: "pkce",
-      redirectTo: window.location.origin + "/auth/callback",
-    },
-  });
+  provider: "google",
+  options: {
+    // 반드시 현재 호스트의 동일 오리진으로
+    redirectTo: `${window.location.origin}/auth/callback`,
+    // (선택) 구글 로그인 UX 개선 옵션
+    queryParams: { prompt: "select_account" },
+  },
+});
+
   return null;
 }
 
