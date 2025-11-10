@@ -12,17 +12,22 @@ async function requireGoogleLogin() {
   if (data?.user) return data.user;
 
   await supabase.auth.signInWithOAuth({
-  provider: "google",
-  options: {
-    // 반드시 현재 호스트의 동일 오리진으로
-    redirectTo: `${window.location.origin}/auth/callback`,
-    // (선택) 구글 로그인 UX 개선 옵션
-    queryParams: { prompt: "select_account" },
-  },
-});
-
+    provider: "google",
+    options: {
+      // 콜백용 별도 경로 없이, 로그인 시작한 페이지(혹은 사이트 루트)로 복귀
+      redirectTo: window.location.origin, // 또는 window.location.href
+      flowType: "implicit",               // 🔸핵심: implicit 흐름으로 강제
+      queryParams: { access_type: "offline", prompt: "consent" }, // 필요 시
+    },
+  });
   return null;
 }
+
+async function handleLogout() {
+  await supabase.auth.signOut();
+  window.location.href = "/"; // 또는 navigate("/", { replace: true });
+}
+
 
 export default function MyPageMain() {
   const navigate = useNavigate();
@@ -221,10 +226,7 @@ export default function MyPageMain() {
         </div>
         <button
     className="logout-btn"
-    onClick={async () => {
-      await supabase.auth.signOut();
-      window.location.href = "/"; // 로그아웃 후 홈으로 이동
-    }}
+    onClick={handleLogout}
   >
     로그아웃
   </button>
