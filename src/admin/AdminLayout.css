@@ -1,0 +1,25 @@
+.admin-wrap { padding: 12px; }
+.admin-header {
+  position: sticky;
+  /* TopNav 높이(56px) + 여백(8px) */
+  top: 10px;
+  z-index: 5;
+
+  background: #fafbff;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* TopNav와 안 겹치도록 추가 여백 */
+  margin-top: 20px;
+}
+.admin-title { font-weight: 700; }
+.admin-nav { display: flex; gap: 10px; align-items: center; }
+.admin-nav a { color: var(--color-primary); font-weight: 600; }
+.admin-nav button {
+  background: #eee; border: 1px solid var(--color-border); border-radius: 8px; padding: 6px 10px; cursor: pointer;
+}
+.admin-main { margin-top: 10px; }

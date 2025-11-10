@@ -1,0 +1,125 @@
+/* ===== 페이지 ===== */
+.sell-wrap{max-width:800px;margin:0 auto;padding:16px;font-family:"Pretendard",sans-serif}
+.sell-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.sell-title{font-size:20px;font-weight:800}
+.sell-user{font-size:14px;color:#374151}
+.sell-section{margin-top:20px}
+.sell-section h3{margin:0 0 10px;font-size:16px;font-weight:700}
+
+/* ===== 이벤트 선택 ===== */
+.event-list{display:grid;gap:8px}
+.event-item{border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:10px;text-align:left;cursor:pointer;transition:.2s}
+.event-item:hover{background:#f9fafb}
+.event-item.active{outline:2px solid #6366f1}
+.event-name{font-weight:700}
+.event-date{font-size:12px;color:#6b7280}
+
+/* ===== 인증/배송 폼 ===== */
+.panel{border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:12px}
+.form-row{display:flex;gap:8px;align-items:center;margin-bottom:8px}
+.form-row-inline{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+.form-stack{display:grid;gap:10px}
+.form-item label{display:block;font-size:13px;margin-bottom:6px;color:#374151}
+.form-item input[type="date"], .form-item select, textarea{width:100%;border:1px solid #e5e7eb;border-radius:8px;padding:8px;font:inherit}
+textarea{resize:vertical;min-height:80px}
+
+/* ===== 상품 카드 ===== */
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px}
+.prod-card{position:relative;display:flex;flex-direction:column;gap:8px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;padding:10px;transition:.15s}
+.prod-card:hover{box-shadow:0 4px 12px rgba(0,0,0,.06)}
+.prod-card.checked{background:#f5f7ff}
+.prod-left{display:flex;align-items:center;gap:10px;cursor:pointer}
+.prod-thumb{width:56px;height:56px;border-radius:8px;object-fit:cover;border:1px solid #e5e7eb}
+.prod-noimg{width:56px;height:56px;border-radius:8px;background:#f3f4f6;color:#9ca3af;display:flex;align-items:center;justify-content:center;border:1px solid #e5e7eb}
+.prod-meta{display:flex;flex-direction:column}
+.prod-name{font-weight:700}
+.prod-price{font-size:12px;color:#6b7280}
+
+/* 수량 스텝퍼 */
+.prod-stepper{display:flex;align-items:center;gap:8px;justify-content:flex-end}
+.prod-stepper button{width:28px;height:28px;border-radius:8px;border:1px solid #e5e7eb;background:#f9fafb;font-weight:600}
+
+/* 우상단 연필 (겹침 방지) */
+.prod-edit-btn{position:absolute;top:6px;right:6px;z-index:5;border:1px solid #e5e7eb;border-radius:10px;background:#fff;padding:6px;line-height:1;box-shadow:0 2px 6px rgba(0,0,0,.08)}
+.prod-edit-btn:hover{background:#f9fafb}
+
+/* ===== 하단 요약 & 버튼 ===== */
+.sell-footer{display:flex;align-items:center;justify-content:space-between;margin-top:12px}
+.sell-summary{color:#374151;font-size:14px}
+
+/* ===== 버튼 ===== */
+.btn{padding:8px 12px;border:1px solid #e5e7eb;border-radius:10px;background:#f9fafb;font-size:14px;cursor:pointer}
+.btn:hover{background:#f3f4f6}
+.btn.primary{background:#6366f1;border-color:#6366f1;color:#fff}
+.btn.primary:hover{background:#4f46e5}
+.btn.danger{background:#fee2e2;border-color:#fca5a5;color:#b91c1c}
+
+/* 체크박스 크기 축소 */
+input[type="checkbox"]{width:16px;height:16px;accent-color:#6366f1}
+
+/* ===== 모달 공통 ===== */
+.dlg-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;z-index:60}
+.dlg-panel{width:92%;max-width:520px;background:#fff;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.dlg-header{display:flex;align-items:center;justify-content:space-between;padding:12px 16px;border-bottom:1px solid #e5e7eb}
+.dlg-title{font-weight:700}
+.dlg-close{border:1px solid #e5e7eb;background:#fff;border-radius:8px;padding:4px 8px;cursor:pointer}
+.dlg-footer{display:flex;justify-content:flex-end;gap:8px;padding:12px 16px;border-top:1px solid #e5e7eb}
+.muted{color:#94a3b8}
+
+/* ===== 거래/배송 방법 - 다중 선택 칩 스타일 ===== */
+.form-item .form-stack > label {
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  padding: 8px 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  transition: background .15s, border-color .15s, box-shadow .15s;
+}
+.form-item .form-stack > label:hover {
+  background: #f9fafb;
+}
+.form-item .form-stack > label input[type="checkbox"],
+.form-item .form-stack > label input[type="radio"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #6366f1; /* 보라 */
+}
+
+/* 2열 그리드로 보기 좋게 (너비 좁으면 자동 줄바꿈) */
+.form-item .form-stack {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 420px) {
+  .form-item .form-stack {
+    grid-template-columns: 1fr; /* 좁은 화면에선 1열 */
+  }
+}
+
+/* 선택된 칩의 시각적 강조 (체크되면 label에 :has()로 강조) */
+.form-item .form-stack > label:has(input:checked) {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, .15);
+  background: #f5f7ff;
+}
+
+/* ===== 배송 예정일 - 기타(직접 입력) ===== */
+.form-item input[type="text"] {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  font: inherit;
+}
+.form-item input[type="text"]::placeholder {
+  color: #9ca3af;
+}
+
+/* 섹션 내부 여백 살짝 정리 */
+.panel .form-item + .form-item {
+  margin-top: 10px;
+}

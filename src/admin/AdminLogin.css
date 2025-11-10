@@ -1,0 +1,10 @@
+.admin-login { display: flex; flex-direction: column; gap: 10px; }
+.admin-login input {
+  padding: 10px; border: 1px solid var(--color-border); border-radius: 8px;
+}
+.admin-login button {
+  padding: 10px; border: 0; border-radius: 8px; background: var(--color-primary);
+  color: #fff; font-weight: 700; cursor: pointer;
+}
+.login-msg { color: var(--color-text-sub); }
+.hint { color: var(--color-text-sub); font-size: 12px; }

@@ -1,0 +1,153 @@
+/* ===== 공통 레이아웃 ===== */
+.admin-products {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb; /* gray-200 */
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.panel h4 {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 메인 2단 컬럼: 왼쪽 폼 / 오른쪽 목록 */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 340px; /* ← 목록 폭 고정 */
+  gap: 16px;
+  align-items: start;
+}
+
+/* 모바일/태블릿에선 1단으로 떨어지게 */
+@media (max-width: 960px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 옵션 폼 그리드 */
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+@media (max-width: 960px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== 폼/컨트롤 ===== */
+input, select, button {
+  font: inherit;
+}
+
+input, select {
+  width: 100%;
+  height: 40px;
+  padding: 8px 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  outline: none;
+}
+input:focus, select:focus {
+  border-color: #6366f1;          /* indigo-500 */
+  box-shadow: 0 0 0 3px #e0e7ff;  /* indigo-100 */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hint {
+  font-size: 12px;
+  color: #6b7280; /* gray-500 */
+}
+
+/* ===== 버튼 ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  cursor: pointer;
+  transition: all .15s ease;
+}
+.btn:hover {
+  background: #f3f4f6;
+}
+.btn.primary {
+  background: #6366f1;
+  border-color: #6366f1;
+  color: #fff;
+}
+.btn.primary:hover {
+  filter: brightness(0.95);
+}
+.btn.danger {
+  background: #fee2e2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+.btn:disabled {
+  opacity: .6;
+  cursor: not-allowed;
+}
+
+/* ===== 목록(오른쪽 패널) ===== */
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 520px;    /* 길어지면 내부 스크롤 */
+  overflow: auto;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  background: #fafafa;
+}
+.item.active {
+  border-color: #6366f1;
+  background: #eef2ff; /* indigo-50 */
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.muted {
+  color: #6b7280;
+  font-weight: 400;
+  margin-left: 6px;
+}
+
+.spacer { flex: 1; }

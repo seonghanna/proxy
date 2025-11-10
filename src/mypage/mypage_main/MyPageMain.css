@@ -1,0 +1,226 @@
+.mypage-wrap { max-width: 800px; margin: 0 auto; padding: 16px; }
+
+/* 로그인 배너 */
+.login-banner {
+  background: #eef2ff;
+  border: 1px solid #c7d2fe;
+  border-radius: 12px;
+  padding: 14px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+/* 상단 탭 (구매/판매) - 가운데 정렬 추가 */
+.mypage-tabs {
+  display: flex;
+  justify-content: center;   /* ✅ 가운데 정렬 */
+  gap: 8px;
+  margin: 10px 0 6px;
+}
+
+/* 구형 .tabs 구조 유지 (다른 곳에서 쓸 수도 있으니 보존) */
+.tabs {
+  display: flex;
+  justify-content: space-between;  /* 양쪽으로 배치 */
+  gap: 12px;                       /* 버튼 사이 간격 */
+  margin: 14px 0 10px;
+  padding: 0 10px;                 /* 좌우 여백 */
+}
+
+.tab {
+  flex: 1;                         /* 기본적으로 동일 비율 */
+  padding: 7px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+/* 구매(왼쪽) 버튼만 살짝 더 크게 */
+.tab:first-child {
+  flex: 1.3;
+}
+
+/* 판매(오른쪽) 버튼도 살짝 확장 */
+.tab:last-child {
+  flex: 1.3;
+}
+
+
+.tab.active { background:#4f77b8; color:#fff; border-color:#ffffff; }
+
+/* 하단 판매 서브탭 */
+.subtabs { 
+  display: flex;
+  justify-content: space-between;  /* 양쪽으로 배치 */
+  gap: 12px;                       /* 버튼 사이 간격 */
+  margin: 14px 0 10px;
+  padding: 0 10px;     
+}
+.subtab {
+  flex: 1;                         /* 기본적으로 동일 비율 */
+  padding: 7px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+.subtab.active { background:#6980a5; color:#fff; border-color:#ffffff; }
+
+/* 섹션 */
+.section { margin-top: 10px; }
+.section-title { font-size: 14px; font-weight: 800; color:#374151; margin-bottom: 8px; }
+.section-body { display: grid; gap: 8px; }
+
+/* 빈 상태 */
+.empty {
+  border: 1px dashed #cbd5e1; border-radius: 12px; padding: 20px;
+  color:#64748b; text-align:center; background:#f8fafc;
+}
+
+/* 카드 리스트 공통 */
+.card {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  background: #eef3ff;
+  border-radius: 12px;
+  padding: 8px; /* 기존 10px → 8px */
+}
+
+.card-left { display:flex; gap:10px; min-width: 0; align-items:center; }
+/* ✅ 구매내역 썸네일 크기 줄이기 */
+.thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+/* ✅ 신청내역 썸네일 더 작게 (기존 56 → 48) */
+.card-thumb { width:48px; height:48px; border-radius:8px; object-fit:cover; border:1px solid #e5e7eb; }
+
+.card-noimg {
+  width:48px; height:48px; border-radius:8px; background:#f3f4f6; display:flex; align-items:center; justify-content:center; color:#94a3b8; border:1px solid #e5e7eb;
+}
+.card-meta { min-width: 0; }
+.card-title { font-weight:800; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.card-sub { font-size:12px; color:#6b7280; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+.card-right { margin-left:auto; display:flex; flex-direction:column; gap:6px; align-items:flex-end; }
+.card-icon { font-size:18px; }
+.badge { display:inline-block; padding: 4px 8px; border-radius: 999px; background:#eef2ff; color:#3730a3; font-size:12px; font-weight:700; }
+
+/* 버튼 */
+.btn { padding:8px 12px; border:1px solid #e5e7eb; border-radius:10px; background:#f9fafb; cursor:pointer; }
+.btn.primary { background:#3b82f6; border-color:#3b82f6; color:#fff; }
+.btn.primary.wide { min-width: 140px; }
+.btn.accept { background:#10b981; border-color:#10b981; color:#fff; }
+
+/* ---------------------- 메시지 레이아웃 (공유 CSS) ---------------------- */
+.chat-layout{display:grid;grid-template-columns:260px 1fr;gap:12px;height:calc(100vh - 140px)}
+.chat-rooms{border:1px solid #e5e7eb;border-radius:12px;background:#fff;overflow:auto}
+.chat-rooms-header{font-weight:700;padding:10px 12px;border-bottom:1px solid #e5e7eb}
+.chat-rooms-list{list-style:none;margin:0;padding:0}
+.chat-rooms-item{padding:10px 12px;cursor:pointer;border-bottom:1px solid #f1f5f9}
+.chat-rooms-item.active{background:#f5f7ff}
+.room-title{font-weight:700}
+.room-sub{font-size:12px;color:#64748b}
+
+.chat-view{border:1px solid #e5e7eb;border-radius:12px;background:#fff;display:flex;flex-direction:column}
+.chat-wrap{display:flex;flex-direction:column;height:100%}
+.chat-header{padding:10px 12px;border-bottom:1px solid #e5e7eb;font-weight:700}
+.chat-list{flex:1;overflow:auto;padding:12px;display:grid;gap:8px}
+.chat-item{max-width:75%}
+.chat-item.me{justify-self:end;text-align:right}
+.chat-bubble{display:inline-block;padding:8px 10px;border-radius:10px;background:#f1f5f9}
+.chat-item.me .chat-bubble{background:#6366f1;color:#fff}
+.chat-time{font-size:11px;color:#94a3b8;margin-top:2px}
+.chat-input{display:flex;gap:8px;padding:10px;border-top:1px solid #e5e7eb}
+.chat-input input{flex:1;border:1px solid #e5e7eb;border-radius:10px;padding:8px}
+
+/* 채팅방 목록 화면 */
+.chat-list-page { padding: 16px; }
+.chat-room-list { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px; }
+.chat-room-item { display:flex; align-items:center; gap:10px; border:1px solid #eee; border-radius:10px; padding:10px; cursor:pointer; }
+.chat-room-item:hover { background:#f9f9ff; }
+.chat-room-thumb { width:60px; height:60px; border-radius:8px; object-fit:cover; background:#f1f5f9; display:flex; justify-content:center; align-items:center; font-weight:700; color:#94a3b8; }
+.chat-room-meta { flex:1; }
+.chat-room-title { font-weight:600; margin-bottom:4px; }
+.chat-room-sub { color:#64748b; font-size:13px; }
+
+.chat-room-page { display:flex; flex-direction:column; height:calc(100vh - 120px); }
+.chat-back { background:none; border:none; font-size:18px; margin-right:8px; cursor:pointer; }
+
+/* ✨ 마이페이지 카드 (상단 콘텐츠 + 하단 CTA 버튼) */
+.order-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  overflow: hidden;         /* 하단 버튼과 모서리 라운드 딱 맞추기 */
+  background: #f7f9ff; 
+  margin-bottom: 16px;     /* 아주 연한 하늘색 톤 */
+}
+
+/* 상단: 이미지 + 이벤트명 */
+.order-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;                /* 이미지-텍스트 간격 */
+  padding: 14px 16px;       /* 상단 영역 패딩 */
+  background: #eef2ff;      /* 시안처럼 살짝 톤 */
+}
+
+/* 썸네일 */
+.order-thumb {
+  width: 64px;
+  height: 64px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+/* 이벤트명(두 줄) */
+.order-title {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  line-height: 1.3;
+}
+.order-title .group {
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+.order-title .name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 하단: 풀폭 파란 버튼 */
+.order-cta {
+  display: block;
+  width: 100%;
+  font-size: 13px;
+  border: none;
+  padding: 14px 16px;
+  background: #4f77b8;          /* 파랑 */
+  color: #fff;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: filter .15s ease, background .15s ease;
+}
+.order-cta:hover { filter: brightness(0.98); }
+.order-cta:active { filter: brightness(0.94); }

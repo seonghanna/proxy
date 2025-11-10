@@ -1,0 +1,81 @@
+@import url("./styles/theme.css");
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg);
+  font-family: var(--font-main);
+  display: flex;
+  justify-content: center;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 390px; /* 아이폰 12 기준 */
+  min-height: 100vh;
+  background-color: var(--color-surface);
+  box-shadow: var(--shadow-card);
+  border-radius: var(--radius-large);
+  overflow: hidden;
+  position: relative;
+  padding-top: 56px; /* 상단 네비 높이 */
+  padding-bottom: 64px;
+}
+
+/* 스크롤바 숨기기 (앱처럼 보이게) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* 기본 링크 스타일 */
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+/* 텍스트 기본 색상 */
+body {
+  color: var(--color-text-main);
+  font-size: 15px;
+}
+
+/* 버튼 공통 스타일 (원할 때 class로 불러쓰기) */
+.button-primary {
+  background-color: var(--color-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-medium);
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-primary:hover {
+  background-color: #5766e0;
+}
+
+.button-accent {
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  border-radius: var(--radius-medium);
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.button-accent:hover {
+  background-color: #ff4b6d;
+}

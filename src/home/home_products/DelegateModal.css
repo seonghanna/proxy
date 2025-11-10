@@ -1,0 +1,66 @@
+.dlg-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,.35);
+  display: flex; align-items: center; justify-content: center; z-index: 60;
+}
+.dlg-panel {
+  width: min(720px, 94vw); max-height: 86vh; overflow: hidden;
+  background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  display: flex; flex-direction: column;
+}
+.dlg-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 14px; border-bottom: 1px solid #e5e7eb;
+}
+.dlg-title { font-weight: 800; }
+.dlg-close { background: none; border: 0; font-size: 22px; cursor: pointer; }
+
+.dlg-loading, .dlg-empty { padding: 28px; text-align: center; color: #6b7280; }
+
+.dlg-list { padding: 10px 12px; overflow: auto; }
+.dlg-item {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 1px solid #e5e7eb; border-radius: 12px; padding: 8px; margin-bottom: 10px;
+}
+.dlg-item.checked { background: #f5f7ff; }
+.dlg-left { display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.dlg-thumb { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; border: 1px solid #e5e7eb; }
+.dlg-noimg { width: 56px; height: 56px; border-radius: 8px; background: #f3f4f6;
+  display:flex; align-items:center; justify-content:center; color:#9ca3af; border: 1px solid #e5e7eb; }
+.dlg-meta { min-width: 0; }
+.dlg-name { font-weight: 700; }
+.dlg-price { font-size: 12px; color: #6b7280; }
+
+.dlg-right { display: flex; align-items: center; gap: 10px; }
+.dlg-select { height: 36px; border-radius: 8px; border: 1px solid #e5e7eb; padding: 0 10px; }
+.dlg-stepper { display: flex; align-items: center; gap: 8px; }
+.dlg-stepper button {
+  width: 28px; height: 28px; border-radius: 8px; border: 1px solid #e5e7eb; background: #f9fafb;
+}
+.dlg-footer {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; border-top: 1px solid #e5e7eb; background: #fafafa;
+}
+.dlg-count { color: #6b7280; }
+.btn { padding: 8px 12px; border: 1px solid #e5e7eb; border-radius: 10px; background: #f9fafb; }
+.btn.primary { background: #6366f1; border-color: #6366f1; color: #fff; }
+/* 기존 스타일 아래에 추가 */
+
+.dlg-form {
+  padding: 10px 12px;
+  border-top: 1px solid #e5e7eb;
+  background: #fafafa;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+}
+@media (max-width: 720px) {
+  .dlg-form { grid-template-columns: 1fr; }
+}
+.dlg-form-row { display: flex; flex-direction: column; gap: 6px; }
+.dlg-form-row label { font-size: 12px; color: #6b7280; }
+.dlg-form-row input, .dlg-form-row select {
+  height: 38px; border: 1px solid #e5e7eb; border-radius: 8px; padding: 0 10px; background: #fff;
+}
+
+.dlg-sum { display: grid; gap: 4px; font-size: 14px; color: #374151; }
+.dlg-total { color: #111827; font-size: 16px; }

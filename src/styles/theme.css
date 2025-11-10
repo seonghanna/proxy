@@ -1,0 +1,20 @@
+:root {
+  /* 🎨 주요 색상 */
+  --color-primary: #6b7bff;
+  --color-accent: #ff6584;
+  --color-bg: #f4f4f9;
+  --color-surface: #ffffff;
+  --color-border: #e0e0e0;
+  --color-text-main: #333333;
+  --color-text-sub: #777777;
+
+  /* ✨ 그림자 & 라운드 */
+  --shadow-card: 0 2px 6px rgba(0, 0, 0, 0.1);
+  --shadow-popup: 0 4px 12px rgba(0, 0, 0, 0.12);
+  --radius-large: 20px;
+  --radius-medium: 12px;
+  --radius-small: 8px;
+
+  /* 🖋️ 폰트 */
+  --font-main: "Pretendard", "Noto Sans KR", sans-serif;
+}
