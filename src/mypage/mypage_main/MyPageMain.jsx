@@ -219,6 +219,15 @@ export default function MyPageMain() {
             onClick={() => setTab("sell")}
           >판매</button>
         </div>
+        <button
+    className="logout-btn"
+    onClick={async () => {
+      await supabase.auth.signOut();
+      window.location.href = "/"; // 로그아웃 후 홈으로 이동
+    }}
+  >
+    로그아웃
+  </button>
       </header>
 
       {loading ? (
